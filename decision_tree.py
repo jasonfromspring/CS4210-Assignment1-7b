@@ -34,9 +34,11 @@ with open('contact_lens.csv', 'r') as csvfile:
 #TPR: Normal = 1, Reduced = 2
 
 for object in db:
+   print(object)
    row = []
-   for col,value in enumerate(object):
-         if col == 0:
+   col=0
+   for value in object:
+         if col== 0:
             if value == 'Young':
                row.append(1)
             elif value == 'Prepresbyopic':
@@ -58,6 +60,7 @@ for object in db:
                 row.append(1)
             else:
                 row.append(2)
+         col=col+1
    X.append(row)
    print(row)
 
